@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <h2>Password Generator</h2>
+
+        <!-- Password Output -->
+        <div class="output">
+            <span id="password">Generated Password</span>
+            <button id="copyBtn">Copy</button>
+        </div>
+
+        
+        <!-- Length -->
+        <div class="settings">
+            <div class="range-group">
+                <label>
+                    Length: <span id="lengthVal">12</span>
+                </label>
+                <input type="range" id="length" min="6" max="30" value="12">
+            </div>
+
+            
+            <!-- Checkboxes -->
+            <div class="checkboxes">
+                <label><input type="checkbox" id="lower" checked> Lowercase</label>
+                <label><input type="checkbox" id="upper" checked> Uppercase</label>
+                <label><input type="checkbox" id="numbers" checked> Numbers</label>
+                <label><input type="checkbox" id="symbols" checked> Symbols</label>
+            </div>
+        </div>
+
+        
+        <!-- Button -->
+        <button class="btn" id="generate">Generate Password</button>
+
+        
+        <!-- Strength -->
+        <div class="strength">
+            <span id="strengthText">Strength: Weak</span>
+        </div>
+
+        <div class="strength-bar">
+            <div id="bar"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Toast -->
+<div class="toast" id="toast">Copied!</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
