@@ -15,8 +15,8 @@ body {
 }
 
 .container {
-    width: 100%;
     display: flex;
+    gap: 4px;
     justify-content: center;
     align-items: center;
 }
@@ -49,6 +49,7 @@ h2 {
     font-size: 14px;
     word-break: break-all;
 }
+    
 
 .output button {
     background: transparent;
@@ -127,3 +128,45 @@ input[type="range"] {
     opacity: 1;
 }
 
+
+
+/* .............................. */
+
+.card2 {
+    background: #2e6c77;
+    padding: 25px;
+    border-radius: 15px;
+    width: 320px;
+    height: 412px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.output2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f1e2d;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.output2 input[type="search"]{
+    background-color: #0f1e2d;
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+.output2 button {
+    background: transparent;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #151b4e;
+    }
+}
