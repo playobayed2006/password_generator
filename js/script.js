@@ -30,48 +30,53 @@ document.addEventListener("DOMContentLoaded", () => {
         const hasUpper = document.getElementById("upper").checked;
         const hasNumber = document.getElementById("numbers").checked;
         const hasSymbol = document.getElementById("symbols").checked;
-
+    
         const lower = "abcdefghijklmnopqrstuvwxyz";
         const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const numbers = "0123456789";
         const symbols = "!@#$%^&*()_+";
-
+    
         let chars = "";
         if (hasLower) chars += lower;
         if (hasUpper) chars += upper;
         if (hasNumber) chars += numbers;
         if (hasSymbol) chars += symbols;
-
+    
         if (!chars) {
             passwordEl.textContent = "Select at least one option!";
             return;
         }
-
+    
         let password = "";
         for (let i = 0; i < length; i++) {
             password += chars[secureRandom(chars.length)];
         }
-
+    
+        // Display the main password
         passwordEl.textContent = password;
-
-        /////////////////////////////////
-        const addOutputDiv = () => {
+    
+        ////////////////////////////////////////////
+        const addOutputDiv = (pass) => {
             const container = document.querySelector('.output3-main');
             if (container) {
                 const htmlContent = `
                     <div class="output3">
                         <div class="search-container">
-                            <span id="recent">Recent Password 1</span>
+                            <span class="recent-password"></span>
                         </div>
                     </div>`;
+                
                 container.insertAdjacentHTML('beforeend', htmlContent);
+                
+                const recentSpans = container.querySelectorAll('.recent-password');
+                const lastSpan = recentSpans[recentSpans.length - 1];
+                lastSpan.textContent = pass;
             }
         };
-        
-        // To run it:
-        addOutputDiv();
-        ////////////////////////////////
-
+    
+    
+        addOutputDiv(password); 
+        //////////////////////////////////////////////////////
     
         updateStrength(password);
     }
