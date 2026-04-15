@@ -91,6 +91,10 @@ input[type="range"] {
     opacity: 0.9;
 }
 
+#save{
+    background: linear-gradient(90deg, #00bd39, #017501);
+}
+
 /* Strength */
 .strength {
     margin-top: 15px;
@@ -169,4 +173,15 @@ input[type="range"] {
     &:hover{
         background-color: #151b4e;
     }
+}
+
+
+.output3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f1e2d;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
