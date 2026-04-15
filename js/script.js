@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const strengthText = document.getElementById("strengthText");
     const toast = document.getElementById("toast");
 
+    //////////////////////////////////////
+
+    const recent = document.getElementById("recent")
+
     // Slider update
     lengthEl.addEventListener("input", () => {
         lengthVal.textContent = lengthEl.value;
@@ -49,6 +53,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         passwordEl.textContent = password;
+
+        /////////////////////////////////
+        const addOutputDiv = () => {
+            const container = document.querySelector('.output3-main');
+            if (container) {
+                const htmlContent = `
+                    <div class="output3">
+                        <div class="search-container">
+                            <span id="recent">Recent Password 1</span>
+                        </div>
+                    </div>`;
+                container.insertAdjacentHTML('beforeend', htmlContent);
+            }
+        };
+        
+        // To run it:
+        addOutputDiv();
+        ////////////////////////////////
+
+    
         updateStrength(password);
     }
 
